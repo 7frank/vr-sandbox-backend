@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "region",
+    "description": "a region containing arbitrary data for now"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "assets": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "dependencies": {
+      "type": "json"
+    },
+    "data": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}
