@@ -1,5 +1,5 @@
 {
-  "name": "myStrapiProject",
+  "name": "vr-sandbox-backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application.",
@@ -10,17 +10,21 @@
     "start2": "strapi start",
     "strapi": "node_modules/strapi/bin/strapi.js",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
-    "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
+    "postinstall": "node node_modules/strapi/lib/utils/post-install.js",
+    "db-backup": "node backup/backup.js",
+    "db-restore": "node backup/restore.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.12.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-react": "^6.8.0"
+    "eslint-plugin-react": "^6.8.0",
+    "mongodb-restore": "^1.6.2"
   },
   "dependencies": {
     "lodash": "4.x.x",
+    "mongodb-backup": "^1.6.9",
     "strapi": "3.0.0-alpha.12.6",
     "strapi-mongoose": "3.0.0-alpha.12.6"
   },

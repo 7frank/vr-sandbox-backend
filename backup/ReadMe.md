@@ -1,0 +1,2 @@
+* rudimentary backup and restore for development
+* for production it should be easier to have a dedicated service exposing mongodb, thus no backups would be necessary when building the docker container.

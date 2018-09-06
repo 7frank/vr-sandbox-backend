@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "region",
   "info": {
     "name": "region",
     "description": "a region containing arbitrary data for now"
@@ -9,24 +9,46 @@
     "timestamps": true
   },
   "attributes": {
-    "assets": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload"
-    },
-    "dependencies": {
-      "type": "json"
-    },
-    "data": {
-      "type": "string"
-    },
-    "author": {
+    "name": {
+      "unique": true,
       "type": "string"
     },
     "thumbnail": {
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "assets": {
+      "collection": "asset",
+      "via": "regions",
+      "dominant": true
+    },
+    "data": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "owner": {
+      "model": "user",
+      "via": "regions",
+      "plugin": "users-permissions"
+    },
+    "position": {
+      "default": "0 0 0",
+      "type": "string",
+      "maxLength": 20
+    },
+    "dimensions": {
+      "default": "50 50 50",
+      "type": "string",
+      "maxLength": 10
+    },
+    "objects": {
+      "collection": "patch",
+      "via": "regions",
+      "dominant": true
     }
   }
 }

@@ -38,6 +38,14 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "regions": {
+      "collection": "region",
+      "via": "owner"
+    },
+    "patch": {
+      "model": "patch",
+      "via": "owner"
     }
   }
 }

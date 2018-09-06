@@ -5,9 +5,50 @@
         "appearance": ""
       },
       "data": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "author": {
+        "appearance": ""
+      },
+      "name": {
+        "appearance": ""
+      },
+      "data2": {
+        "appearance": "WYSIWYG"
+      },
+      "description": {
+        "appearance": ""
+      },
+      "position": {
+        "appearance": ""
+      },
+      "dimensions": {
+        "appearance": ""
+      }
+    }
+  },
+  "asset": {
+    "attributes": {
+      "Name": {
+        "appearance": ""
+      },
+      "Type": {
+        "appearance": ""
+      }
+    }
+  },
+  "patch": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      },
+      "data": {
+        "appearance": "WYSIWYG"
+      },
+      "description": {
+        "appearance": ""
+      },
+      "dependencies": {
         "appearance": ""
       }
     }
