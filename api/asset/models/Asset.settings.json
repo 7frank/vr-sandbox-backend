@@ -1,0 +1,41 @@
+{
+  "connection": "default",
+  "collectionName": "asset",
+  "info": {
+    "name": "asset",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Type": {
+      "enum": [
+        "audio",
+        "video",
+        "image",
+        "mesh",
+        "other"
+      ],
+      "type": "enumeration",
+      "required": true
+    },
+    "src": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "regions": {
+      "collection": "region",
+      "via": "assets"
+    },
+    "patches": {
+      "collection": "patch",
+      "via": "assets"
+    }
+  }
+}

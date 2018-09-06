@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/patch",
+      "handler": "Patch.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/patch/count",
+      "handler": "Patch.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/patch/:_id",
+      "handler": "Patch.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/patch",
+      "handler": "Patch.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/patch/:_id",
+      "handler": "Patch.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/patch/:_id",
+      "handler": "Patch.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

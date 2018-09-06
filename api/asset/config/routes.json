@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/asset",
+      "handler": "Asset.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/asset/count",
+      "handler": "Asset.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/asset/:_id",
+      "handler": "Asset.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/asset",
+      "handler": "Asset.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/asset/:_id",
+      "handler": "Asset.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/asset/:_id",
+      "handler": "Asset.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

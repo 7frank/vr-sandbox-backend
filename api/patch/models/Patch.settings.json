@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "patch",
+  "info": {
+    "name": "patch",
+    "description": "base container for 3d elements"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "data": {
+      "default": "<a-box></a-box>",
+      "type": "text",
+      "maxLength": 65535
+    },
+    "assets": {
+      "collection": "asset",
+      "via": "patches",
+      "dominant": true
+    },
+    "owner": {
+      "model": "user",
+      "via": "patch",
+      "plugin": "users-permissions"
+    },
+    "description": {
+      "maxLength": 300,
+      "type": "text"
+    },
+    "dependencies": {
+      "type": "json"
+    },
+    "regions": {
+      "collection": "region",
+      "via": "objects"
+    }
+  }
+}
