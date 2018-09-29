@@ -1,0 +1,31 @@
+version: "2"
+services:
+  strapi:
+    container_name: strapi
+    environment:
+        - APP_NAME=strapi-app
+        - DATABASE_CLIENT=mongo
+        - DATABASE_HOST=mongo
+        - DATABASE_PORT=27017
+        - DATABASE_NAME=strapi
+        - DATABASE_USERNAME=
+        - DATABASE_PASSWORD=
+
+
+    restart: always
+    build: .
+    ports:
+      - "1337:1337"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - 'mongo:/data/db'
+    ports:
+      - "27017:27017"
+volumes:
+  mongo:

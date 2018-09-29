@@ -11,5 +11,8 @@ process.chdir(__dirname);
 
 (() => {
   const strapi = require('strapi');
+
+  //console.log(process.env);
+
   strapi.start();
 })();
