@@ -11,3 +11,11 @@ A quick description of myStrapiProject.
  ```
  strapi start
  ```
+ 
+ 
+ docker-compose up
+ docker-compose build
+ 
+ docker-compose -f docker-compose-test.yml up
+
+ 

@@ -1,0 +1,8 @@
+* build a container that is running on heroku
+    * strapi errors and restarts over
+        * maybe deactivate strapi service for now
+        * for starters start service again from console
+        *
+
+    * create base container/image with mongo and strapi running as services
+        * then add sandbox

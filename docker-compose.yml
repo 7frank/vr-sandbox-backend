@@ -1,5 +1,11 @@
 version: "2"
 services:
+
+  sandbox:
+    container_name: sandbox
+    image: frank1147/vrsandbox
+    ports:
+      - "9000:9000"
   strapi:
     container_name: strapi
     environment:
@@ -27,5 +33,8 @@ services:
       - 'mongo:/data/db'
     ports:
       - "27017:27017"
+
+
+
 volumes:
   mongo:

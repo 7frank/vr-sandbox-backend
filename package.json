@@ -6,13 +6,25 @@
   "main": "./server.js",
   "scripts": {
     "setup": "cd admin && npm run setup",
-    "start": "node server.js",
+    "start0": "node server.js",
+    "start": "http-server",
     "start2": "strapi start",
     "strapi": "node_modules/strapi/bin/strapi.js",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
     "postinstall": "node node_modules/strapi/lib/utils/post-install.js",
     "db-backup": "node backup/backup.js",
-    "db-restore": "node backup/restore.js"
+    "db-restore": "node backup/restore.js",
+    "#docker-dump": "docker cp quizzical_jennings:/usr/src/app - > container-dump.tar",
+    "#docker-start-portainer": "docker run -d -p 1234:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer",
+    "#docker-build-monolith-supervisord": "docker build . -f ./Dockerfile -t frank1147/vrsandbox-monolith-supervisord",
+    "#docker-run-monolith-supervisord": "docker run -p 9000:9000 -p 27017:27017 -p 1337:1337  frank1147/vrsandbox-monolith-supervisord",
+    "heroku-login-use-bash": "heroku login",
+    "heroku-container-login": "heroku container:login",
+    "heroku-docker-build-push": "heroku container:push web --app mighty-everglades-60535",
+    "heroku-docker-release": "heroku container:release web --app mighty-everglades-60535",
+    "heroku-docker-open": "heroku open --app mighty-everglades-60535",
+    "heroku-image-push": "docker tag frank1147/vrsandbox:heroku-build registry.heroku.com/mighty-everglades-60535/web && docker push registry.heroku.com/mighty-everglades-60535/web",
+    "heroku-image-push0": "docker tag frank1147/vrsandbox-monolith-supervisord registry.heroku.com/mighty-everglades-60535/web && docker push registry.heroku.com/mighty-everglades-60535/web"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -23,6 +35,7 @@
     "mongodb-restore": "^1.6.2"
   },
   "dependencies": {
+    "http-server": "^0.11.1",
     "lodash": "4.x.x",
     "mongodb-backup": "^1.6.9",
     "strapi": "3.0.0-alpha.12.6",
