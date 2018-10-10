@@ -18,6 +18,10 @@
     "#docker-start-portainer": "docker run -d -p 1234:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer",
     "#docker-build-monolith-supervisord": "docker build . -f ./Dockerfile -t frank1147/vrsandbox-monolith-supervisord",
     "#docker-run-monolith-supervisord": "docker run -p 9000:9000 -p 27017:27017 -p 1337:1337  frank1147/vrsandbox-monolith-supervisord",
+    "#docker-build-backend-slim": "docker build . -f ./Dockerfile -t frank1147/vrsandbox-backend-slim",
+    "#docker-run-backend-slim": "docker run -p 27017:27017 -p 1337:1337  frank1147/vrsandbox-backend-slim",
+
+
     "heroku-login-use-bash": "heroku login",
     "heroku-container-login": "heroku container:login",
     "heroku-docker-build-push": "heroku container:push web --app mighty-everglades-60535",

@@ -5,11 +5,11 @@
 #
 
 
+#From frank1147/vrsandbox
+#TODO
+#From node:8-slim
 
-
-
-
-From frank1147/vrsandbox
+From node:carbon
 LABEL maintainer "Frank Reimann <github.com/7frank>"
 
 
@@ -76,6 +76,10 @@ RUN apt-get install -y supervisor
 # Configure supervisor
 COPY ./mongo/supervisord.conf /etc/supervisor/supervisord.conf
 
+
+
+
+
 # Configure cron
 #COPY ./mongo/crontab /etc/cron/crontab
 
@@ -83,4 +87,10 @@ COPY ./mongo/supervisord.conf /etc/supervisor/supervisord.conf
 #RUN crontab /etc/cron/crontab
 
 # Run supervisor
-CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+#ENTRYPOINT  ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+
+# prevent "Error: positional arguments are not supported"
+COPY ./mongo/supervisord.sh /opt/bin/supervisord.sh
+
+ENTRYPOINT ["bash", "/opt/bin/supervisord.sh"]
+
